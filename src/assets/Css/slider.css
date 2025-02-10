@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.screenshotsSlickSliderContent {
+  display: grid;
+  grid-template-rows: 0.8fr 2fr;
+}
+
+#tranding .tranding-slider {
+  padding-top: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.tranding-slide {
+  width: 37rem;
+  height: 42rem;
+  position: relative;
+}
+
+.tranding-slide {
+  width: 33% !important;
+  margin: auto !important;
+}
+
+/* sekillerin razmeri */
+.tranding-slide .tranding-slide img {
+  width: 44rem !important;
+  height: 42rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  left: 2rem;
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: "";
+}
+
+/* me */
+.swiper-3d,
+.swiper-3d.swiper-css-mode .swiper-wrapper {
+  perspective: 1000px !important;
+}
+
+.tranding-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Slider section start */
+.screenshotsContent {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.screenshotsContent h1 {
+  color: #000;
+  font-family: Inter;
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.screenshotsContent p {
+  color: var(--gray-gray-450, #7f8285);
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  /* 160% */
+}
+
+.tranding-slider-control .swiper-button-prev {
+  width: 36px;
+  height: 36px;
+  left: 43.1% !important;
+}
+
+.tranding-slider-control .swiper-button-next {
+  width: 36px;
+  height: 36px;
+  left: 50.5% !important;
+}
+
+/* Slider section end */
+
+/* media */
+@media only screen and (max-width: 1600px) {
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .blackScreen img {
+    position: absolute;
+    top: 25px !important;
+    left: 37% !important;
+    width: 26.2% !important;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 41.5% !important;
+  }
+}
+
+@media only screen and (max-width: 1270px) {
+  .container {
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+
+  .blackScreen img {
+    position: absolute;
+    top: 20px !important;
+    left: 40.2% !important;
+    width: 19.8% !important;
+  }
+
+  .tranding-slide {
+    width: 37rem;
+    height: 25rem;
+    position: relative;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 40.5% !important;
+  }
+}
+
+@media only screen and (max-width: 1129px) {
+  .container {
+    max-width: 61rem;
+    margin: 0 auto;
+  }
+
+  .tranding-slide {
+    width: 37rem;
+    height: 30rem;
+    position: relative;
+  }
+
+  .blackScreen img {
+    position: absolute;
+    top: 22px !important;
+    left: 37.5% !important;
+    width: 24.9% !important;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 39.5% !important;
+  }
+}
+
+@media only screen and (max-width: 976px) {
+  .container {
+    max-width: 51rem;
+    margin: 0 auto;
+  }
+
+  .tranding-slide {
+    width: 32rem;
+    height: 25rem;
+    position: relative;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 37.5% !important;
+  }
+}
+
+@media only screen and (max-width: 796px) {
+  .container {
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+
+  .tranding-slide {
+    width: 32rem;
+    height: 17rem;
+    position: relative;
+  }
+
+  .blackScreen img {
+    position: absolute;
+    top: 23px !important;
+    left: 37.1% !important;
+    width: 26% !important;
+  }
+
+  .screenshotsContent h1 {
+    font-size: 40px;
+  }
+
+  .tranding-slider-control .swiper-button-next {
+    width: 36px;
+    height: 36px;
+    left: 48.5% !important;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 33.5% !important;
+  }
+}
+
+@media only screen and (max-width: 482px) {
+  .screenshotsContent h1 {
+    font-size: 37px;
+  }
+
+  .container {
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .tranding-slide {
+    width: 32rem;
+    height: 18rem;
+    position: relative;
+  }
+
+  .blackScreen img {
+    position: absolute;
+    top: 23px !important;
+    left: 36% !important;
+    width: 28% !important;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 28.6% !important;
+  }
+
+  .tranding-slide img {
+    margin: 0px 40px !important;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .screenshotsContent {
+    width: 80%;
+    margin: auto;
+  }
+
+  .screenshotsContent h1 {
+    font-size: 36px;
+  }
+
+  .screenshotsContent p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .container {
+    max-width: 19rem;
+    margin: 0 auto;
+  }
+
+  .tranding-slide {
+    width: 32rem;
+    height: 17rem;
+    position: relative;
+  }
+
+  .blackScreen img {
+    position: absolute;
+    top: 26px !important;
+    left: 35% !important;
+    width: 30% !important;
+  }
+
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+  }
+}
+
+@media only screen and (max-width: 289px) {
+  .container {
+    max-width: 14rem;
+    margin: 0 auto;
+  }
+}
+
+/* .tranding-slider {
+    position: relative;
+}
+
+.blackScreen img {
+    position: absolute;
+    top: 21px;
+    left: 39.5%;
+    width: 21%;
+} */
