@@ -7,8 +7,7 @@
 /* Fonts-start */
 @font-face {
   font-family: Inter;
-  src: url("../src/assets/Fonts/Inter-VariableFont_slnt\,wght.ttf")
-    format("truetype");
+  src: url("../Fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
 }
 
 /* fonts-end */
@@ -19,7 +18,7 @@
   height: 100%;
   padding-bottom: 100px;
   position: relative;
-  background-image: url("../src/assets/Images/header-images/banner-with-abstract-background-with-green-paper-cutout-waves\ 1.png");
+  background-image: url("../Images/header-images/banner-with-abstract-background-with-green-paper-cutout-waves 1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #001c3d;
