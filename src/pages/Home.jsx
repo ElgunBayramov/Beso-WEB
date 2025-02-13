@@ -1,45 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../layout/footer";
 import "../assets/Css/style.main.css";
 import "../assets/Css/style.css";
 import "../assets/Css/slider.css";
-import besoHeader from "../assets/Images/header-images/besoHeader.svg";
-import globus from "../assets/Images/header-images/globus.svg";
-import ellipse2 from "../assets/Images/header-images/Ellipse 2.png";
-import googlePlay from "../assets/Images/header-images/Mobile google play badge.svg";
-import appStore from "../assets/Images/header-images/Mobile app store badge.svg";
-import frame1321314596 from "../assets/Images/header-images/Frame 1321314596-min.png";
-import imgForDesign from "../assets/Images/header-images/imgForDesign.png";
-import outline from "../assets/Images/main-images/Outline.svg";
-import antDesign from "../assets/Images/main-images/ant-design_ant-design-outlined.svg";
-import icMobileFriendly from "../assets/Images/main-images/ic_baseline-mobile-friendly.svg";
-import frame1321314556 from "../assets/Images/informationAppSectionImage/Frame 1321314556-min.png";
-import iconoirPage from "../assets/Images/informationAppSectionImage/iconoir_page.svg";
-import iconoirPage1 from "../assets/Images/informationAppSectionImage/iconoir_page (1).svg";
-import iconoirPage2 from "../assets/Images/informationAppSectionImage/iconoir_page (2).svg";
-import dashboardMin from "../assets/Images/slickSliderImages/Dashboard-min.png";
-import getPaidMin from "../assets/Images/slickSliderImages/GetPaid-min.png";
-import invoceMin from "../assets/Images/slickSliderImages/Invoce-min.png";
-import investoryMin from "../assets/Images/slickSliderImages/Investory-min.png";
-import payMin from "../assets/Images/slickSliderImages/Pay-min.png";
-import frame1321314572 from "../assets/Images/slickSliderImages/Frame 1321314572.svg";
-import frame1321314573 from "../assets/Images/slickSliderImages/Frame 1321314573.svg";
-import iphone2 from "../assets/Images/fullScreenImageWithButton/iPhone 14 Pro (2).png";
-import iphone3 from "../assets/Images/fullScreenImageWithButton/iPhone 14 Pro (3).png";
+import images from "../models/images.jsx";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+  const availableLanguages = ["az", "es", "tr", "en"];
+
+  const filteredLanguages = availableLanguages.filter(
+    (lang) => lang !== currentLanguage
+  );
+
+  const changeLanguage = (lng) => {
+    if (lng !== i18n.language) {
+      i18n.changeLanguage(lng);
+      localStorage.setItem("selectedLanguage", lng);
+      setCurrentLanguage(lng);
+    }
+  };
+
   return (
     <>
       <section id="headerAndContentSection">
         <div id="headerAndContentContainer">
           <header className="headerContent">
             <a href="index.html">
-              <img src={besoHeader} alt="" />
+              <img src={images.header.besoHeader} alt="" />
             </a>
             <div className="headerRightSideLinks">
               <ul>
                 <li>
-                  <a href="">Administer your business</a>
+                  <a href="">{t("administer_business")}</a>
                   <i
                     className="fa-solid fa-chevron-down down-icon"
                     style={{ color: "#ffffff" }}
@@ -55,14 +51,14 @@ function Home() {
                 <img
                   style={{ cursor: "pointer" }}
                   className="js-language-toggle"
-                  src={globus}
+                  src={images.header.globus}
                   alt=""
                 />
               </ul>
               <div className="dropdownList hidden js-navbar-list">
                 <div className="dropdownListContent">
                   <li>
-                    <a href="">Administer your business</a>
+                    <a href="">{t("administer_business")}</a>
                   </li>
                   <li>
                     <a href="aboutBeso.html">About Beso</a>
@@ -74,22 +70,33 @@ function Home() {
               </div>
               <div className="globusdownList hidden js-language-list">
                 <div className="languageListContent">
-                  <li>
-                    <a href="./azerbaijanLanguage/index.html">AZ</a>
+                  {/* <li>
+                    <button onClick={() => changeLanguage("az")}>AZ</button>
                   </li>
                   <li>
-                    <a href="./spanishLanguage/index.html">ES</a>
+                    <button onClick={() => changeLanguage("es")}>ES</button>
                   </li>
                   <li>
-                    <a href="./turkishLanguage/index.html">TR</a>
-                  </li>
+                    <button onClick={() => changeLanguage("tr")}>TR</button>
+                  </li> */}
+                  {filteredLanguages.map((lang, index) => (
+                    <li key={index}>
+                      <a href="" onClick={() => changeLanguage(lang)}>
+                        {lang.toUpperCase()}
+                      </a>
+                    </li>
+                  ))}
                 </div>
               </div>
             </div>
           </header>
           <section className="contentWithMobileImg">
             <div className="contentWithMobileImg-LeftSide">
-              <img className="blur-left-side" src={ellipse2} alt="" />
+              <img
+                className="blur-left-side"
+                src={images.header.ellipse2}
+                alt=""
+              />
               <div className="contentWithMobileImg-LeftSide-wordsAndLlinks">
                 <h1>Managing your small business has never been so easy!</h1>
                 <h5>
@@ -116,17 +123,17 @@ function Home() {
                   className="ahref"
                   href="https://play.google.com/store/apps/details?id=com.beso.dev&pcampaignid=web_share"
                 >
-                  <img src={googlePlay} alt="" />
+                  <img src={images.header.googlePlay} alt="" />
                 </a>
                 <a href="https://apps.apple.com/es/app/beso-mobile/id6449295813?l=en-GB">
-                  <img src={appStore} alt="" />
+                  <img src={images.header.appStore} alt="" />
                 </a>
               </div>
             </div>
             <div className="contentWithMobileImg-rightSide">
               <img
                 className="iphoneImageUnderHeader"
-                src={frame1321314596}
+                src={images.header.frame1321314596}
                 alt=""
               />
               <div className="contentWithMobileImg-LeftSide-androidAndAppleButtons in-web-display-none">
@@ -134,16 +141,20 @@ function Home() {
                   className="ahref"
                   href="https://play.google.com/store/apps/details?id=com.beso.dev"
                 >
-                  <img src={googlePlay} alt="" />
+                  <img src={images.header.googlePlay} alt="" />
                 </a>
                 <a href="https://apps.apple.com/az/app/beso-mobile/id6449295813">
-                  <img src={appStore} alt="" />
+                  <img src={images.header.appStore} alt="" />
                 </a>
               </div>
             </div>
           </section>
         </div>
-        <img className="imgForDesignFirstSection" src={imgForDesign} alt="" />
+        <img
+          className="imgForDesignFirstSection"
+          src={images.header.imgForDesign}
+          alt=""
+        />
       </section>
       {/* <!-- Section-with-header-content-end -->
   <!-- main-content-start --> */}
@@ -161,7 +172,7 @@ function Home() {
             </div>
             <div className="whyBesoIconcontent">
               <div className="securityCard card animate" style={{ "--i": 2 }}>
-                <img src={outline} alt="" />
+                <img src={images.main.outline} alt="" />
                 <h3>Security</h3>
                 <p>
                   All your info on your cell phone, stored safely and securely.
@@ -169,7 +180,7 @@ function Home() {
                 </p>
               </div>
               <div className="designCard card animate" style={{ "--i": 3 }}>
-                <img src={antDesign} alt="" />
+                <img src={images.main.antDesign} alt="" />
                 <h3>Design</h3>
                 <p>
                   Monitor your finances quickly and easily - and automatically
@@ -181,7 +192,7 @@ function Home() {
                 className="userFriendlyCard card animate"
                 style={{ "--i": 4 }}
               >
-                <img src={icMobileFriendly} alt="" />
+                <img src={images.main.icMobileFriendly} alt="" />
                 <h3>User Friendly</h3>
                 <p>
                   Crisp, clean, easy - with photo uploads for your inventory -
@@ -207,11 +218,15 @@ function Home() {
 
           <div className="informationAppIconAndImage">
             <div className="informationCImageContent">
-              <img style={{ width: "100%" }} src={frame1321314556} alt="" />
+              <img
+                style={{ width: "100%" }}
+                src={images.informationApp.frame1321314556}
+                alt=""
+              />
             </div>
             <div className="informationIconsContent">
               <div className="animate appcards" style={{ "--i": 0 }}>
-                <img src={iconoirPage} alt="" />
+                <img src={images.informationApp.iconoirPage} alt="" />
                 <h3>Register transactions in multiple currencies</h3>
                 <p>
                   Register your sales, expenses and debts across 168 world
@@ -220,7 +235,7 @@ function Home() {
                 </p>
               </div>
               <div className="animate appcards" style={{ "--i": 2 }}>
-                <img src={iconoirPage1} alt="" />
+                <img src={images.informationApp.iconoirPage1} alt="" />
                 <h3>Keep track of inventory</h3>
                 <p>
                   Track purchases and sales from inventory, with a photo upload
@@ -228,7 +243,7 @@ function Home() {
                 </p>
               </div>
               <div className="animate appcards" style={{ "--i": 1 }}>
-                <img src={iconoirPage2} alt="" />
+                <img src={images.informationApp.iconoirPage2} alt="" />
                 <h3>Monitor your finances</h3>
                 <p>
                   Keep instant, concise track of your finances, with the ability
@@ -236,7 +251,7 @@ function Home() {
                 </p>
               </div>
               <div className="animate appcards" style={{ "--i": 3 }}>
-                <img src={iconoirPage2} alt="" />
+                <img src={images.informationApp.iconoirPage2} alt="" />
                 <h3>Analyze your Balances</h3>
                 <p>
                   Instantly view, analyse your balance status over the past
@@ -272,7 +287,7 @@ function Home() {
                   <div className="swiper-slide tranding-slide">
                     <img
                       style={{ objectFit: "contain" }}
-                      src={dashboardMin}
+                      src={images.slickSlider.dashboardMin}
                       alt="Tranding"
                     />
                   </div>
@@ -281,7 +296,7 @@ function Home() {
                   <div className="swiper-slide tranding-slide">
                     <img
                       style={{ objectFit: "contain" }}
-                      src={getPaidMin}
+                      src={images.slickSlider.getPaidMin}
                       alt="Tranding"
                     />
                   </div>
@@ -290,7 +305,7 @@ function Home() {
                   <div className="swiper-slide tranding-slide">
                     <img
                       style={{ objectFit: "contain" }}
-                      src={invoceMin}
+                      src={images.slickSlider.invoceMin}
                       alt="Tranding"
                     />
                   </div>
@@ -299,7 +314,7 @@ function Home() {
                   <div className="swiper-slide tranding-slide">
                     <img
                       style={{ objectFit: "contain" }}
-                      src={investoryMin}
+                      src={images.slickSlider.investoryMin}
                       alt="Tranding"
                     />
                   </div>
@@ -308,7 +323,7 @@ function Home() {
                   <div className="swiper-slide tranding-slide">
                     <img
                       style={{ objectFit: "contain" }}
-                      src={payMin}
+                      src={images.slickSlider.payMin}
                       alt="Tranding"
                     />
                   </div>
@@ -323,14 +338,14 @@ function Home() {
                     <div className="swiperButtonPrev">
                       <img
                         className="swiper-button-prev"
-                        src={frame1321314572}
+                        src={images.slickSlider.frame1321314572}
                         alt=""
                       />
                     </div>
                     <div className="swiperButtonNext">
                       <img
                         className="swiper-button-next"
-                        src={frame1321314573}
+                        src={images.slickSlider.frame1321314573}
                         alt=""
                       />
                     </div>
@@ -363,10 +378,10 @@ function Home() {
               </div>
               <div className="rightsideWithtwoImage">
                 <div className="firstBottomImage">
-                  <img src={iphone2} alt="" />
+                  <img src={images.fullScreen.iphone2} alt="" />
                 </div>
                 <div className="secondTopImage">
-                  <img src={iphone3} alt="" />
+                  <img src={images.fullScreen.iphone3} alt="" />
                 </div>
               </div>
             </div>
