@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/Css/style.main.css";
+import "../../assets/Css/homePage.css";
 import {
   FaLinkedin,
   FaInstagram,
@@ -7,33 +7,31 @@ import {
   FaTwitter,
   FaTiktok,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <footer className="myFooter">
       <section className="sectionForAnime">
         <div className="footerContainer">
           <div className="footerContent">
             <div className="footerLeftSideContent">
-              <h1>Beso</h1>
-              <p>
-                Small businesses play an outsized role in economies worldwide,
-                where the vast majority still keep paper records and have no
-                digital presence. Beso is here to help those entrepreneurs reach
-                their full potential.
-              </p>
+              <h1>{t("beso")}</h1>
+              <p>{t("footer_infobeso")}</p>
             </div>
             <div className="footerRightSideContent">
               <div className="quickLinksList">
-                <h3>Quick Links</h3>
-                <a href="./index.html">
-                  <p>Home</p>
+                <h3>{t("quick_links")}</h3>
+                <a href="/">
+                  <p>{t("home")}</p>
                 </a>
                 <a href="./privacypolicy.html">
-                  <p>Privacy Policy</p>
+                  <p>{t("privacy_policy")}</p>
                 </a>
                 <a href="./termsandconditions.html">
-                  <p>Terms & Conditions</p>
+                  <p>{t("terms_conditions")}</p>
                 </a>
                 <a
                   target="_blank"
@@ -44,19 +42,19 @@ function Footer() {
                 </a>
               </div>
               <div className="aboutUsList">
-                <h3>About Us</h3>
+                <h3>{t("about_us")}</h3>
                 <a href="./aboutBeso.html" style={{ textDecoration: "none" }}>
-                  <p>Meet the Team</p>
+                  <p>{t("meet_team")}</p>
                 </a>
-                <p>Our Story</p>
-                <p>Career</p>
+                <p>{t("our_story")}</p>
+                <p>{t("career")}</p>
               </div>
               <div className="contactsList">
-                <h3>Contacts</h3>
+                <h3>{t("contact")}</h3>
                 <p>info@beso.dev</p>
               </div>
               <div className="followusList">
-                <h3>Follow us</h3>
+                <h3>{t("follow_us")}</h3>
                 <div
                   className="socialMediaLinks"
                   style={{ display: "flex", gap: "10px" }}
@@ -81,9 +79,7 @@ function Footer() {
             </div>
           </div>
           <hr className="horizontLine" />
-          <p className="endFooterCopyrightWord">
-            Copyright Beso @ 2024. All rights reserved.
-          </p>
+          <p className="endFooterCopyrightWord">{t("copyright")}</p>
         </div>
       </section>
     </footer>

@@ -7,18 +7,18 @@
 /* Fonts-start */
 @font-face {
   font-family: Inter;
-  src: url("../Fonts/Inter-VariableFont_slnt\,wght.ttf");
+  src: url("../Fonts/Inter-VariableFont_slnt,wght.ttf");
 }
 
 /* fonts-end */
 /* <!-- Section-with-header-content-start --> */
-#headerAndContentSection {
+#headerAndContentSectionAbout {
   max-width: 100%;
   height: 100%;
   position: relative;
 }
 
-#headerAndContentContainer {
+#headerAndContentContainerAbout {
   max-width: 75%;
   height: 100%;
   margin: auto;
@@ -26,21 +26,21 @@
   grid-template-rows: 0.7fr;
 }
 
-.headerContent {
+.headerContentAbout {
   display: grid;
   grid-template-columns: 0.2fr 1fr;
   align-items: center;
   padding-top: 39px;
 }
 
-.headerRightSideLinks ul {
+.headerRightSideLinksAbout ul {
   display: flex;
   justify-content: end;
   list-style: none;
   gap: 55px;
 }
 
-.headerRightSideLinks ul li a {
+.headerRightSideLinksAbout ul li a {
   text-decoration: none;
   color: #001c3d;
   font-family: inter;
@@ -50,15 +50,15 @@
   line-height: normal;
 }
 
-.headerRightSideLinks ul li i {
+.headerRightSideLinksAbout ul li i {
   font-size: 20px;
 }
 
-.headerRightSideLinks ul li .down-icon {
+.headerRightSideLinksAbout ul li .down-icon {
   padding-left: 4px;
 }
 
-.headerRightSideLinks .hamburgerIcon {
+.headerRightSideLinksAbout .hamburgerIcon {
   display: none;
   color: white;
   margin-right: 5px;
@@ -66,7 +66,7 @@
 }
 
 /* responsive hamburger button start */
-.headerRightSideLinks {
+.headerRightSideLinksAbout {
   position: relative;
 }
 
@@ -111,7 +111,7 @@
 /* responsive hamburger button end */
 
 /* responsive globus button start */
-.headerRightSideLinks {
+.headerRightSideLinksAbout {
   position: relative;
 }
 
@@ -127,7 +127,7 @@
   top: 36px;
 }
 
-.languageListContent {
+.languageListContentAbout {
   display: grid;
   grid-template-rows: 0.2fr 0.2fr;
   background-color: #001c3d;
@@ -140,11 +140,11 @@
   padding-bottom: 10px;
 }
 
-.js-language-list li {
+.js-language-listAbout li {
   list-style: none;
 }
 
-.js-language-list li a {
+.js-language-listAbout li a {
   text-decoration: none;
   color: var(--white-white, #ffffff);
   font-family: inter;
@@ -168,6 +168,7 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   margin-top: 95px;
+  margin-bottom: 100px;
 }
 
 .leftSideContent {
@@ -330,7 +331,7 @@
 }
 
 @media only screen and (max-width: 904px) {
-  .headerRightSideLinks ul {
+  .headerRightSideLinksAbout ul {
     display: flex;
     justify-content: end;
     list-style: none;
@@ -353,7 +354,7 @@
     margin: auto;
   }
 
-  .headerRightSideLinks ul {
+  .headerRightSideLinksAbout ul {
     display: flex;
     justify-content: end;
     list-style: none;
@@ -380,17 +381,17 @@
 }
 
 @media only screen and (max-width: 730px) {
-  .headerRightSideLinks ul li {
+  .headerRightSideLinksAbout ul li {
     display: none;
   }
 
-  .headerRightSideLinks .hamburgerIcon {
+  .headerRightSideLinksAbout .hamburgerIcon {
     display: block;
   }
 }
 
 @media only screen and (max-width: 699px) {
-  .headerRightSideLinks ul {
+  .headerRightSideLinksAbout ul {
     display: flex;
     justify-content: end;
     list-style: none;

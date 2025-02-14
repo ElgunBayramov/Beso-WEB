@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../layout/footer";
-import "../assets/Css/style.main.css";
 import "../assets/Css/style.css";
+import "../assets/Css/homePage.css";
 import "../assets/Css/slider.css";
 import images from "../models/images.jsx";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function Home() {
   const { t, i18n } = useTranslation();
@@ -42,10 +43,10 @@ function Home() {
                   ></i>
                 </li>
                 <li>
-                  <a href="aboutBeso.html">About Beso</a>
+                  <a href="/about">{t("about_beso")}</a>
                 </li>
                 <li>
-                  <a href="investors.html">Investors</a>
+                  <a href="/investors">{t("investors")}</a>
                 </li>
                 <i className="dropDownIcon fa-solid fa-bars hamburgerIcon js-navbar-toogle"></i>
                 <img
@@ -61,10 +62,10 @@ function Home() {
                     <a href="">{t("administer_business")}</a>
                   </li>
                   <li>
-                    <a href="aboutBeso.html">About Beso</a>
+                    <a href="/about">{t("about_beso")}</a>
                   </li>
                   <li>
-                    <a href="investors.html">Investors</a>
+                    <a href="/investors">{t("investors")}</a>
                   </li>
                 </div>
               </div>
@@ -98,24 +99,21 @@ function Home() {
                 alt=""
               />
               <div className="contentWithMobileImg-LeftSide-wordsAndLlinks">
-                <h1>Managing your small business has never been so easy!</h1>
-                <h5>
-                  Track inventory, accounts, invoices and expenses digitally -
-                  your small business, in your pocket
-                </h5>
+                <h1>{t("manage_business")}</h1>
+                <h5>{t("track_investory")}</h5>
               </div>
               <div className="contentWithMobileImg-LeftSide-counts">
                 <div>
                   <h2>10K+</h2>
-                  <p>Users</p>
+                  <p>{t("users")}</p>
                 </div>
                 <div>
                   <h2>140+</h2>
-                  <p>Currencies</p>
+                  <p>{t("currencies")}</p>
                 </div>
                 <div>
                   <h2>1M+</h2>
-                  <p>Transactions</p>
+                  <p>{t("transactions")}</p>
                 </div>
               </div>
               <div className="contentWithMobileImg-LeftSide-androidAndAppleButtons in-mobile-display-none">
@@ -163,41 +161,29 @@ function Home() {
         <section className="whyBesoContentSection">
           <div className="whyBesoContentContainer">
             <div className="whyBesoContent">
-              <h1 className="animate card">Why Beso?</h1>
+              <h1 className="animate card">{t("why_beso")}</h1>
               <p className="animate card" style={{ "--i": 1 }}>
-                Running a small business can be complex and for many it’s often
-                still paper-based. Beso brings together inventory, receivables,
-                payables, and invoicing in one easy-to-use app.
+                {t("run_business")}
               </p>
             </div>
             <div className="whyBesoIconcontent">
               <div className="securityCard card animate" style={{ "--i": 2 }}>
                 <img src={images.main.outline} alt="" />
-                <h3>Security</h3>
-                <p>
-                  All your info on your cell phone, stored safely and securely.
-                  No more risk of losing paper.
-                </p>
+                <h3>{t("security")}</h3>
+                <p>{t("info_sec")}</p>
               </div>
               <div className="designCard card animate" style={{ "--i": 3 }}>
                 <img src={images.main.antDesign} alt="" />
-                <h3>Design</h3>
-                <p>
-                  Monitor your finances quickly and easily - and automatically
-                  send reminders, with digital, compliant e-invoicing coming
-                  soon.
-                </p>
+                <h3>{t("design")}</h3>
+                <p>{t("info_design")}</p>
               </div>
               <div
                 className="userFriendlyCard card animate"
                 style={{ "--i": 4 }}
               >
                 <img src={images.main.icMobileFriendly} alt="" />
-                <h3>User Friendly</h3>
-                <p>
-                  Crisp, clean, easy - with photo uploads for your inventory -
-                  no more searching, no need to be an expert!
-                </p>
+                <h3>{t("user_friendly")}</h3>
+                <p>{t("info_userfriendly")}</p>
               </div>
             </div>
           </div>
@@ -207,13 +193,8 @@ function Home() {
         {/* <!-- how does this app work section start --> */}
         <section className="informationAbputaAppHowThisWork">
           <div className="howThisAppWorkContent">
-            <h1>What does Beso Offer?</h1>
-            <p>
-              Beso offers small businesses essential accounting, inventory
-              management and multi-currency tools with the ability to fully
-              reconcile against purchases, sales, income, and expenses - all in
-              one place, from your pocket.
-            </p>
+            <h1>{t("offer_beso")}</h1>
+            <p>{t("offer_besoinfo")}</p>
           </div>
 
           <div className="informationAppIconAndImage">
@@ -227,36 +208,23 @@ function Home() {
             <div className="informationIconsContent">
               <div className="animate appcards" style={{ "--i": 0 }}>
                 <img src={images.informationApp.iconoirPage} alt="" />
-                <h3>Register transactions in multiple currencies</h3>
-                <p>
-                  Register your sales, expenses and debts across 168 world
-                  currencies, with accurate reconciliation on current and past
-                  market conversion rates.
-                </p>
+                <h3>{t("register_transaction")}</h3>
+                <p>{t("info_transaction")}</p>
               </div>
               <div className="animate appcards" style={{ "--i": 2 }}>
                 <img src={images.informationApp.iconoirPage1} alt="" />
-                <h3>Keep track of inventory</h3>
-                <p>
-                  Track purchases and sales from inventory, with a photo upload
-                  making it even easier to track.
-                </p>
+                <h3>{t("track_inventory")}</h3>
+                <p>{t("info_track")}</p>
               </div>
               <div className="animate appcards" style={{ "--i": 1 }}>
                 <img src={images.informationApp.iconoirPage2} alt="" />
-                <h3>Monitor your finances</h3>
-                <p>
-                  Keep instant, concise track of your finances, with the ability
-                  to forecast and project coming soon. .
-                </p>
+                <h3>{t("monitor_finance")}</h3>
+                <p>{t("info_monitoring")}</p>
               </div>
               <div className="animate appcards" style={{ "--i": 3 }}>
                 <img src={images.informationApp.iconoirPage2} alt="" />
-                <h3>Analyze your Balances</h3>
-                <p>
-                  Instantly view, analyse your balance status over the past
-                  week, month and year.
-                </p>
+                <h3>{t("analyze_balance")}</h3>
+                <p>{t("info_analyzing")}</p>
               </div>
             </div>
           </div>
@@ -269,11 +237,8 @@ function Home() {
           style={{ overflow: "hidden" }}
         >
           <div className="screenshotsContent">
-            <h1>Welcome to Beso</h1>
-            <p>
-              A powerful tool for small business that enables entrepreneurs to
-              reach their full potential - safely, easily, seamlessly...
-            </p>
+            <h1>{t("welcome_beso")}</h1>
+            <p>{t("powerful_tool")}</p>
           </div>
           {/* <!-- slider start --> */}
           <section id="tranding">
@@ -363,18 +328,9 @@ function Home() {
           <div className="containerSectionWIthFullImage">
             <div className="SectionWIthFullImageContentBackGround">
               <div className="leftsideWithButtonGetstarted">
-                <h1>About Beso</h1>
-                <p>
-                  Beso was created with entrepreneurs in mind: overcoming the
-                  main obstacles that we believe keeps them from reaching their
-                  full potential. A lack of concise records and tools to enable
-                  decisions constrains small businesses and prevents others from
-                  supporting their growth. With Beso, we empower entrepreneurs
-                  make clearer decisions, offering tools that enable access to
-                  resources to help them grow, build a digital presence, and
-                  access new channels to support their growth.
-                </p>
-                <a href="">Get Started</a>
+                <h1>{t("about_beso")}</h1>
+                <p>{t("textfield_beso")}</p>
+                <a href="">{t("get_started")}</a>
               </div>
               <div className="rightsideWithtwoImage">
                 <div className="firstBottomImage">

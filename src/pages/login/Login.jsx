@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 // import { registerFormSchemas } from "../schemas/RegisterFormSchemas";
 import loginPage from "../../assets/Images/header-images/Frame 1321314682.png";
 import appIcon from "../../assets/Images/BesoLogIcon/App 2.png";
-import "../login/Login.css";
+import "./Login.css";
 
 function Login() {
   const submit = (values, action) => {

@@ -6,11 +6,14 @@ import googlePlay from "../assets/Images/header-images/Mobile google play badge.
 import appStore from "../assets/Images/header-images/Mobile app store badge.svg";
 import frame1321314596 from "../assets/Images/header-images/Frame 1321314596-min.png";
 import imgForDesign from "../assets/Images/header-images/imgForDesign.png";
+import besoIcon from "../assets/Images/--AboutBesoImage/besoIcon.svg";
+import globusBlue from "../assets/Images/header-images/globus-bluecolor.svg";
 
 // Main Images
 import outline from "../assets/Images/main-images/Outline.svg";
 import antDesign from "../assets/Images/main-images/ant-design_ant-design-outlined.svg";
 import icMobileFriendly from "../assets/Images/main-images/ic_baseline-mobile-friendly.svg";
+import aboutImage from "../assets/Images/--AboutBesoImage/IphoneWithBlueCircleOnBackground-min.png";
 
 // Information App Section Images
 import frame1321314556 from "../assets/Images/informationAppSectionImage/Frame 1321314556-min.png";
@@ -40,11 +43,14 @@ const images = {
     appStore,
     frame1321314596,
     imgForDesign,
+    besoIcon,
+    globusBlue,
   },
   main: {
     outline,
     antDesign,
     icMobileFriendly,
+    aboutImage,
   },
   informationApp: {
     frame1321314556,
