@@ -27,7 +27,7 @@ function Investors() {
       <section id="headerAndContentSectionInvestor">
         <div id="headerAndContentContainerInvestor">
           <header className="headerContentInvestor">
-            <a href="index.html">
+            <a href="/">
               <img src={images.header.besoIcon} alt="" />
             </a>
             <div className="headerRightSideLinksInvestor">
@@ -101,7 +101,7 @@ function Investors() {
             </div>
             <div className="text">
               <p>{t("funding_beso")}</p>
-              <p>{t("email_beso")}</p>
+              <p>{t("contact_beso")}</p>
             </div>
           </div>
         </section>

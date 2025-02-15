@@ -30,7 +30,7 @@ function Footer() {
                 <a href="./privacypolicy.html">
                   <p>{t("privacy_policy")}</p>
                 </a>
-                <a href="./termsandconditions.html">
+                <a href="/termsandcontidions">
                   <p>{t("terms_conditions")}</p>
                 </a>
                 <a

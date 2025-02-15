@@ -28,7 +28,7 @@ function About() {
       <section id="headerAndContentSectionAbout">
         <div id="headerAndContentContainerAbout">
           <header className="headerContentAbout">
-            <a href="index.html">
+            <a href="/">
               <img src={images.header.besoIcon} alt="" />
             </a>
             <div className="headerRightSideLinksAbout">

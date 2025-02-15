@@ -30,7 +30,7 @@ function Home() {
       <section id="headerAndContentSection">
         <div id="headerAndContentContainer">
           <header className="headerContent">
-            <a href="index.html">
+            <a href="/">
               <img src={images.header.besoHeader} alt="" />
             </a>
             <div className="headerRightSideLinks">
